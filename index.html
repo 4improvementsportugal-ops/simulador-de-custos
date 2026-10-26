@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Simulador de Custos N5</title>
+  <meta name="description" content="Simulador de custos e margens dos produtos N5 Clara e N5 Imobiliário.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="icon" href="logo-4improvements.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <img src="logo-4improvements.png" alt="4Improvements" width="64" height="64">
+      <div>
+      <h1 data-i18n="title">Simulador de Custos N5</h1>
+      <p class="sub" data-i18n="subtitle"></p>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="ctl">
+      <div class="ctl-title" id="lbl-cfg" data-i18n="settings"></div>
+      <div class="top-actions">
+        <div class="seg lang" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true" title="Português">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" title="English">EN</button>
+        </div>
+        <button class="linkbtn" id="reset" type="button" data-i18n="reset"></button>
+      </div>
+    </div>
+    <div class="ctl">
+      <div class="ctl-title" id="lbl-prod" data-i18n="ariaProduct"></div>
+      <div class="seg" role="group" aria-labelledby="lbl-prod">
+        <button type="button" data-prod="clara" aria-pressed="true">N5 Clara</button>
+        <button type="button" data-prod="imob" aria-pressed="false">N5 Imobiliário</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <div class="ctl-title" id="lbl-scn" data-i18n="ariaScenario"></div>
+      <div class="seg" role="group" aria-labelledby="lbl-scn">
+        <button type="button" data-scn="0.5" aria-pressed="false" data-i18n="scnLight"></button>
+        <button type="button" data-scn="1" aria-pressed="true" data-i18n="scnNormal"></button>
+        <button type="button" data-scn="2.5" aria-pressed="false" data-i18n="scnHeavy"></button>
+      </div>
+    </div>
+    <div class="ctl ctl-llm">
+      <div class="ctl-title" data-i18n="llms"></div>
+      <div class="llm-fields">
+        <label for="model"><span data-i18n="chatAi"></span>
+          <select id="model"></select>
+        </label>
+        <label for="cls"><span data-i18n="callCls"></span>
+          <select id="cls"></select>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <section class="panel inputs" id="inputs" data-i18n-aria="ariaInputs"></section>
+    <section class="panel" data-i18n-aria="ariaResults">
+      <div class="kpis" id="kpis"></div>
+      <h2 data-i18n="hCost"></h2>
+      <div class="stack" id="stack" aria-hidden="true"></div>
+      <div class="bars" id="bars"></div>
+      <div id="flags"></div>
+
+      <div class="section">
+        <h2 data-i18n="hWho"></h2>
+        <div class="tbl"><table id="split"></table></div>
+        <p class="note" data-i18n="noteWho"></p>
+      </div>
+
+      <div class="section">
+        <h2 data-i18n="hUnits"></h2>
+        <div class="tbl"><table id="units"></table></div>
+        <p class="note" data-i18n="noteUnits"></p>
+      </div>
+
+      <div class="section">
+        <h2 data-i18n="hModels"></h2>
+        <div class="tbl"><table id="models"></table></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel section">
+    <h2 data-i18n="hRefs"></h2>
+    <p class="note" data-i18n="noteRefs"></p>
+    <div class="tbl"><table id="refs"></table></div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
